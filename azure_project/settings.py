@@ -155,4 +155,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# default auto field for models
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

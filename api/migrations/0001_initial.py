@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Product',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                # use AutoField to match existing INT column
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
                 ('description', models.TextField(blank=True, null=True)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10)),
@@ -23,7 +24,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Store',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('store_id', models.IntegerField(unique=True)),
                 ('store_location', models.CharField(max_length=100)),
             ],
