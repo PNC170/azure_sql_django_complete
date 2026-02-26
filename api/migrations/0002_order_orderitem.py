@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
             name='Order',
             fields=[
                 # new tables can still use INT if desired; using AutoField for consistency
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('status', models.CharField(choices=[('PENDING', 'Pending'), ('COMPLETED', 'Completed'), ('CANCELLED', 'Cancelled')], default='PENDING', max_length=20)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orders', to=settings.AUTH_USER_MODEL)),
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='OrderItem',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('quantity', models.PositiveIntegerField(default=1)),
                 ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='items', to='api.order')),
                 ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.product')),
